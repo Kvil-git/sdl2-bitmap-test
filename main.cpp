@@ -41,9 +41,15 @@ int main(int argc, char** args) {
 
 	cout<<"test\n";
 
-	for(int piece = 0; piece < 12; piece++){
+	for(int piece = 0; piece < 6; piece++){
 		int pieceX = 130 + piece * 50;
 		int pieceY = 130 + piece * 10;
+		DrawPieceAt(piece, pieceX, pieceY, 50);
+	}
+
+	for(int piece = 6; piece < 12; piece++){
+		int pieceX = 130 + piece * 30;
+		int pieceY = 260 + piece * 5;
 		DrawPieceAt(piece, pieceX, pieceY, 50);
 	}
 	
@@ -88,7 +94,7 @@ bool load(){
 		SDL_Surface* temp;
 
 		
-		bool isPieceWhite = piece < 12;
+		bool isPieceWhite = piece < 6;
 		int pieceNameIndex = piece % 6;
 		string pieceFilePath = (isPieceWhite ?  "WhitePieces/" : "BlackPieces/") + Pieces[pieceNameIndex] + ".bmp";
 		std::cout<<pieceFilePath<<"\n\n";
